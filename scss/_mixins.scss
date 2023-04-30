@@ -1,0 +1,31 @@
+ @mixin rangeSliderStyling{
+    // safari & chrome compatibility
+    &::-webkit-slider-runnable-track{
+        // @include rangeSliderStyling();
+        background: transparent;
+        height: .5rem;
+        border-radius: 5px;
+        border: 1px solid $element-dark-green;
+    }
+    //firefox compatibility
+    &::-moz-range-track {
+        // @include rangeSliderStyling();
+        background: transparent;
+        height: .5rem;
+        border-radius: 5px;
+        border: 1px solid $element-dark-green;
+    }
+    &::-moz-range-progress{
+        background: $element-light-green;
+        height: .5em;
+        border-radius: 5px;
+    }
+    //edge compatibility
+    &::-ms-track{
+        // @include rangeSliderStyling();
+        background: transparent;
+        height: .5rem;
+        border-radius: 5px;
+        border: 1px solid $element-dark-green;
+    }
+ }

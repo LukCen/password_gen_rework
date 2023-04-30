@@ -1,0 +1,88 @@
+// color variables
+@import './mixins';
+$bg-dark: #09080d;
+$container-dark: #24232b;
+
+$element-light-green: #a4ffaf;
+$element-dark-green: #6d9a75;
+
+
+body {
+    background-color: $bg-dark !important;
+    height: 100vh;
+}
+
+// wraps the checkbox element to ensure it can be styled
+// ill analyze this later to figure out why exactly its done this way in the tutorial
+
+.checkboxWrapper {
+    font-family: system-ui, sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1.1;
+}
+// checkbox styling
+input[type='checkbox']{
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    width: 1em;
+    height: 1em;
+    border: 2px solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+
+    &:hover {
+        border: 2px solid #a4ffaf
+    }
+}
+// create the element being a "filling" for the checkbox when checked
+input[type='checkbox']::before{
+    content: '';
+    width: 0.55em;
+    height: 0.55em;
+    transform: scale(0);
+    transition: 200ms transform ease-in-out;
+    box-shadow: inset 1em 1em $element-light-green;
+    border-radius: 0.05em;
+    transform-origin: bottom left;
+    clip-path: polygon(0 48%, 25% 48%, 41% 69%, 75% 0, 100% 0, 41% 100%);
+
+    
+}
+
+input[type='checkbox']:checked::before {
+    transform: scale(1);
+
+}
+// buttons
+.copy, .generate {
+    background-color: $element-light-green;
+    border: 2px solid $element-dark-green;
+    &:hover{
+        background-color: transparent;
+        color: $element-light-green;
+        border: 2px solid $element-light-green;
+    }
+  }
+// the text next to the checkboxes
+.checkboxDesc {
+    cursor: pointer;
+
+    &:hover {
+        color: $element-light-green;
+    }
+  }
+
+.passwordLength {
+    @include rangeSliderStyling();
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+    
+}

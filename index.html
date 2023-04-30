@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Passgen</title>
+</head>
+<body>
+    <div class="container-md d-flex flex-column justify-content-center bg-dark h-75 w-50 mt-5 ">
+        <!-- password goes here -->
+        <div class="row justify-content-center">
+            <div class="col-8 pt-2 d-flex">
+                <input type="text" id="result" class="form-control" placeholder="Your password here!" disabled>
+                <button class="btn btn-small copy mx-1">Copy</button>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-2">
+            <div class="col-8">
+                <input type="range" name="passwordLength" id="passwordLength" min="1" max="16" class="w-100 passwordLength">
+                <label for="passwordLength"></label>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-8 text-light my-1 mt-2" >
+                <!-- checkboxWrapper is needed for custom styled checkboxes -->
+                <label class="checkboxWrapper">
+                    <input type="checkbox" name="smallLetters" id="smallLetters">
+                </label>
+                <label for="smallLetters" class="checkboxDesc">Include small letters</label>
+            </div>
+            <div class="col-8 text-light my-1">
+                <label class="checkboxWrapper">
+                    <input type="checkbox" name="largeLetters" id="largeLetters">
+                </label>
+                <label for="largeLetters" class="checkboxDesc">Include capital letters</label>
+            </div>
+            <div class="col-8 text-light my-1">
+                <label class="checkboxWrapper">
+                    <input type="checkbox" name="numbers" id="numbers">
+                </label>
+                <label for="numbers" class="checkboxDesc">Include numbers</label>
+            </div>
+            <div class="col-8 text-light my-1">
+                <label class="checkboxWrapper">
+                    <input type="checkbox" name="special" id="special">
+                </label>
+                <label for="special" class="checkboxDesc">Include special character</label>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-2">
+            <button class="btn w-auto generate">Generate</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

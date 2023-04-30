@@ -1,0 +1,94 @@
+body {
+  background-color: #09080d !important;
+  height: 100vh;
+}
+
+.checkboxWrapper {
+  font-family: system-ui, sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+input[type=checkbox] {
+  appearance: none;
+  margin: 0;
+  font: inherit;
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+input[type=checkbox]:hover {
+  border: 2px solid #a4ffaf;
+}
+
+input[type=checkbox]::before {
+  content: "";
+  width: 0.55em;
+  height: 0.55em;
+  transform: scale(0);
+  transition: 200ms transform ease-in-out;
+  box-shadow: inset 1em 1em #a4ffaf;
+  border-radius: 0.05em;
+  transform-origin: bottom left;
+  clip-path: polygon(0 48%, 25% 48%, 41% 69%, 75% 0, 100% 0, 41% 100%);
+}
+
+input[type=checkbox]:checked::before {
+  transform: scale(1);
+}
+
+.copy, .generate {
+  background-color: #a4ffaf;
+  border: 2px solid #6d9a75;
+}
+.copy:hover, .generate:hover {
+  background-color: transparent;
+  color: #a4ffaf;
+  border: 2px solid #a4ffaf;
+}
+
+.checkboxDesc {
+  cursor: pointer;
+}
+.checkboxDesc:hover {
+  color: #a4ffaf;
+}
+
+.passwordLength {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+.passwordLength::-webkit-slider-runnable-track {
+  background: transparent;
+  height: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #6d9a75;
+}
+.passwordLength::-moz-range-track {
+  background: transparent;
+  height: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #6d9a75;
+}
+.passwordLength::-moz-range-progress {
+  background: #a4ffaf;
+  height: 0.5em;
+  border-radius: 5px;
+}
+.passwordLength::-ms-track {
+  background: transparent;
+  height: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #6d9a75;
+}
+
+/*# sourceMappingURL=main.css.map */
