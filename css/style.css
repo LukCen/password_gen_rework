@@ -91,4 +91,16 @@ input[type=checkbox]:checked::before {
   border: 1px solid #6d9a75;
 }
 
+output {
+  background: transparent;
+  height: 20px;
+  width: 50px;
+  border: 2px solid #a4ffaf;
+  padding: 10px;
+  border-radius: 10px;
+  color: #a4ffaf;
+  display: grid;
+  place-content: center;
+}
+
 /*# sourceMappingURL=style.css.map */

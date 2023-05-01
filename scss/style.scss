@@ -78,6 +78,7 @@ input[type='checkbox']:checked::before {
     }
   }
 
+  // range slider itself, includes mixins for compatibility
 .passwordLength {
     @include rangeSliderStyling();
     -webkit-appearance: none;
@@ -86,4 +87,17 @@ input[type='checkbox']:checked::before {
     cursor: pointer;
     width: 100%;
     
+}
+
+// display password length
+output {
+    background: transparent;
+    height: 20px;
+    width: 50px;
+    border: 2px solid $element-light-green;
+    padding: 10px;
+    border-radius: 10px;
+    color: $element-light-green;
+    display: grid;
+    place-content: center;
 }
