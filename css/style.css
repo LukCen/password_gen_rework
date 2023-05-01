@@ -17,7 +17,7 @@ input[type=checkbox] {
   width: 1em;
   height: 1em;
   border: 2px solid currentColor;
-  border-radius: 0.15em;
+  border-radius: 0.05em;
   transform: translateY(-0.075em);
   display: grid;
   place-content: center;
@@ -101,6 +101,13 @@ output {
   color: #a4ffaf;
   display: grid;
   place-content: center;
+}
+
+#result {
+  background-color: #24232b;
+  border: none;
+  border-radius: 0;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
