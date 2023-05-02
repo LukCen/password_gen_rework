@@ -15,6 +15,31 @@ const btnGenerate: HTMLButtonElement | null = document.querySelector('.generate'
 const sliderLength: HTMLInputElement | null = document.querySelector('#passwordLength')
 const sliderValue: HTMLOutputElement | null = document.querySelector('output');
 
+/**
+ * 
+ */
+
+
+
+let checkboxReset = (lowercase: HTMLInputElement | null, uppercase: HTMLInputElement | null, nums: HTMLInputElement | null, spec: HTMLInputElement | null) =>{
+    if(lowercase.checked){
+        lowercase.checked = false;
+    }
+    if(uppercase.checked){
+        uppercase.checked = false;
+    }
+    if(nums.checked){
+        nums.checked = false;
+    }
+    if(spec.checked){
+        spec.checked = false;
+    }
+
+    result.value = ''
+}
+
+// resets checkboxes on page reload, to prevent confusion and for a more polished look
+window.onload = () => {checkboxReset(checkSmall, checkLarge, checkNumbers, checkSpecial)}
 
 // i dont even recall why i went for interfaces here, probably some compatibility issues down the line, anyway it does the job
 interface States {

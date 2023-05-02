@@ -11,6 +11,26 @@ const checkSpecial = document.querySelector('#special');
 const btnGenerate = document.querySelector('.generate');
 const sliderLength = document.querySelector('#passwordLength');
 const sliderValue = document.querySelector('output');
+/**
+ *
+ */
+let checkboxReset = (lowercase, uppercase, nums, spec) => {
+    if (lowercase.checked) {
+        lowercase.checked = false;
+    }
+    if (uppercase.checked) {
+        uppercase.checked = false;
+    }
+    if (nums.checked) {
+        nums.checked = false;
+    }
+    if (spec.checked) {
+        spec.checked = false;
+    }
+    result.value = '';
+};
+// resets checkboxes on page reload, to prevent confusion and for a more polished look
+window.onload = () => { checkboxReset(checkSmall, checkLarge, checkNumbers, checkSpecial); };
 // lets me dynamically watch for user options being selected/deselected
 let state = {
     includeSmall: false,

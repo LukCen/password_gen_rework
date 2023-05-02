@@ -22,6 +22,7 @@ body {
     font-weight: bold;
     line-height: 1.1;
 }
+
 // checkbox styling
 input[type='checkbox']{
     appearance: none;
@@ -40,6 +41,7 @@ input[type='checkbox']{
         border: 2px solid #a4ffaf
     }
 }
+
 // create the element being a "filling" for the checkbox when checked
 input[type='checkbox']::before{
     content: '';
