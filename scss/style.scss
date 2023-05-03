@@ -1,6 +1,12 @@
 // color variables
 @import './mixins';
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Verdana', sans-serif;
 
+
+}
 $bg-dark: #09080d;
 $container-dark: #24232b;
 
@@ -102,6 +108,7 @@ output {
     color: $element-light-green;
     display: grid;
     place-content: center;
+    
 }
 
 #result{
@@ -109,4 +116,16 @@ output {
     border: none;
     border-radius: 0;
     color: white;
+    letter-spacing: 2px;
+}
+
+@media screen and (max-width: 680px){
+    input[type='checkbox']{
+        height: .75em;
+        width: .75em
+    }
+
+    .result, .mainBody {
+        width: 100% !important ;
+    }
 }

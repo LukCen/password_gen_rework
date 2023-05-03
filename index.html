@@ -9,21 +9,22 @@
     <title>Passgen</title>
 </head>
 <body>
-    <div class="container-md bg-dark w-50 mt-2 d-flex p-0">
-        <div class="row w-100">
-            <div class="col-9">
+    <!-- password goes here -->
+    <div class="container-md bg-dark mt-2 d-flex result w-50 p-0">
+        <div class="row w-100 m-0 p-0">
+            <div class="col-10">
                 <input type="text" id="result" class="form-control" placeholder="Your password here!" disabled>
             </div>
-            <div class="col-3 d-flex justify-content-end">
-                <button class="btn btn-small copy">Copy</button>
+            <div class="col-2 d-flex justify-content-end p-0">
+                <button class="btn copy">Copy</button>
             </div>
         </div>
 
     </div>
-    <div class="container-md d-flex flex-column justify-content-center bg-dark h-50 w-50 mt-2">
-        <!-- password goes here -->
+    <div class="container-md d-flex flex-column justify-content-center bg-dark h-50 w-50 mt-2 mainBody">
+        <!-- range element for selecting password length -->
         <div class="row justify-content-center mt-2">
-            <div class="col-8 d-flex">
+            <div class="d-flex col-12 justify-content-center">
                 <input type="range" name="passwordLength" id="passwordLength" min="1" max="24" class="w-100 passwordLength me-1">
                 <output for="passwordLength" onforminput="value=passwordLength.valueAsNumber;"></output>
             </div>

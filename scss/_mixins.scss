@@ -5,9 +5,14 @@
     &::-webkit-slider-runnable-track{
         // @include rangeSliderStyling();
         background: transparent;
-        height: .5rem;
+        height: 1rem;
         border-radius: 5px;
         border: 1px solid $element-dark-green;
+        
+    }
+
+    &::-webkit-scrollbar-track{
+        background-color: #fff;
     }
     //firefox compatibility
     &::-moz-range-track {
