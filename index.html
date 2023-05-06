@@ -25,7 +25,7 @@
         <!-- range element for selecting password length -->
         <div class="row justify-content-center mt-2">
             <div class="d-flex col-12 justify-content-center">
-                <input type="range" name="passwordLength" id="passwordLength" min="1" max="24" class="w-100 passwordLength me-1">
+                <input type="range" name="passwordLength" id="passwordLength" min="1" max="24" value="12" class="w-100 passwordLength me-1">
                 <output for="passwordLength" onforminput="value=passwordLength.valueAsNumber;"></output>
             </div>
         </div>
@@ -35,13 +35,13 @@
                 <label class="checkboxWrapper">
                     <input type="checkbox" name="smallLetters" id="smallLetters">
                 </label>
-                <label for="smallLetters" class="checkboxDesc">Include small letters</label>
+                <label for="smallLetters" class="checkboxDesc">Include lowercase letters</label>
             </div>
             <div class="col-12 text-light my-1">
                 <label class="checkboxWrapper">
                     <input type="checkbox" name="largeLetters" id="largeLetters">
                 </label>
-                <label for="largeLetters" class="checkboxDesc">Include capital letters</label>
+                <label for="largeLetters" class="checkboxDesc">Include uppercase letters</label>
             </div>
             <div class="col-12 text-light my-1">
                 <label class="checkboxWrapper">

@@ -83,7 +83,7 @@ const updatePassword = () => {
     }
 }
 
-// takes a final string, generated based on user's selections, and creates a string serving as the password from the selected options. not perfect, sometimes will omit a character type despite it being selected (since its randomized) but i'll fix it later
+// takes a final string, generated based on user's selections, and creates a string serving as the password from the selected options. not perfect, sometimes will omit a character type despite it being selected by the user (since its randomized indexes from a string) but i'll fix it later
 let generatePassword = () => {
     let possibleChars: string = updatePassword();
     let endResult: string | null = ''
@@ -92,12 +92,14 @@ let generatePassword = () => {
 
     for(let i = 0; i < finalLength; i++){
         const randomIndex = Math.floor(Math.random()* possibleChars.length)
+       
         endResult += possibleChars[randomIndex]
-    }
 
+    }
+    
     result.value = endResult
     console.log(endResult.length)
-   
+    
 }
 
 // checks for checkboxes below - not perfect, refreshing the page will refresh the booleans to false, but will NOT change the checked state of the checkboxes itself, will fix later

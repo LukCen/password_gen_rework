@@ -114,16 +114,31 @@ output {
 
 #result {
   background-color: #24232b;
-  border: none;
+  border: 0;
   border-radius: 0;
   color: white;
   letter-spacing: 2px;
 }
+#result::placeholder {
+  color: lightslategray;
+}
+#result:-ms-input-placeholder {
+  color: lightslategray;
+}
+#result::-ms-input-placeholder {
+  color: lightslategray;
+}
 
 @media screen and (max-width: 680px) {
   input[type=checkbox] {
-    height: 0.75em;
-    width: 0.75em;
+    height: 1.33em;
+    width: 1.33em;
+    margin: 0.5em 0 0.5em 0;
+  }
+
+  input[type=checkbox]::before {
+    height: 0.85em;
+    width: 0.95em;
   }
 
   .result, .mainBody {

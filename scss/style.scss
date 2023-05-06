@@ -113,16 +113,33 @@ output {
 
 #result{
     background-color: $container-dark;
-    border: none;
+    border: 0;
     border-radius: 0;
     color: white;
     letter-spacing: 2px;
+
+    &::placeholder {
+        color: lightslategray;
+    }
+
+    &:-ms-input-placeholder {
+        color: lightslategray
+    }
+    &::-ms-input-placeholder {
+        color: lightslategray
+    }
+    
 }
 
 @media screen and (max-width: 680px){
     input[type='checkbox']{
-        height: .75em;
-        width: .75em
+        height: 1.33em;
+        width: 1.33em;
+        margin: .5em 0 .5em 0;
+    }
+    input[type='checkbox']::before{
+        height: .85em;
+        width: .95em;
     }
 
     .result, .mainBody {
