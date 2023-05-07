@@ -11,6 +11,7 @@ const checkSpecial = document.querySelector('#special');
 const btnGenerate = document.querySelector('.generate');
 const sliderLength = document.querySelector('#passwordLength');
 const sliderValue = document.querySelector('output');
+const copy = document.querySelector('.copy');
 /**
  *
  */
@@ -86,6 +87,19 @@ checkSpecial.addEventListener('change', () => {
     state.includeSpecial = !state.includeSpecial;
     console.log(`Special enabled: ${state.includeSpecial}`);
 });
+let copyToClipboard = () => {
+    let copyTarget = result.value;
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(copyTarget).then(() => {
+            console.log('copied');
+        }).catch((error) => {
+            console.error(`An error has occured :`, error);
+        });
+    }
+    else {
+        console.error('Clipboard API not supported');
+    }
+};
 // make password come out when button click - throws an error in the console if no options are selected, but the error doesn't stop the program from working (you can select a character for generating a password, and it'll work fine) so error in the console it is for now
 btnGenerate.addEventListener('click', () => {
     generatePassword();
@@ -93,4 +107,7 @@ btnGenerate.addEventListener('click', () => {
 // handle showing values in the output field
 sliderLength.addEventListener('input', () => {
     sliderValue.value = sliderLength.value;
+});
+copy.addEventListener('click', () => {
+    copyToClipboard();
 });

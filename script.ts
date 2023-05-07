@@ -1,3 +1,6 @@
+
+
+
 const smallLetters: string = 'abcdefghijklmnopqrstuvwxyz';
 const largeLetters: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const numbers: string = '0123456789';
@@ -14,6 +17,7 @@ const btnGenerate: HTMLButtonElement | null = document.querySelector('.generate'
 
 const sliderLength: HTMLInputElement | null = document.querySelector('#passwordLength')
 const sliderValue: HTMLOutputElement | null = document.querySelector('output');
+const copy: HTMLButtonElement | null = document.querySelector('.copy')
 
 /**
  * 
@@ -83,6 +87,7 @@ const updatePassword = () => {
     }
 }
 
+
 // takes a final string, generated based on user's selections, and creates a string serving as the password from the selected options. not perfect, sometimes will omit a character type despite it being selected by the user (since its randomized indexes from a string) but i'll fix it later
 let generatePassword = () => {
     let possibleChars: string = updatePassword();
@@ -123,6 +128,20 @@ checkSpecial.addEventListener('change', () => {
     console.log(`Special enabled: ${state.includeSpecial}`)
 })
 
+let copyToClipboard = () => {
+
+    let copyTarget = result.value
+
+    if(navigator.clipboard){
+        navigator.clipboard.writeText(copyTarget).then(() => {
+            console.log('copied')
+        }).catch((error) => {
+            console.error(`An error has occured :`, error)
+        });
+    } else {
+        console.error('Clipboard API not supported')
+    }
+}
 
 // make password come out when button click - throws an error in the console if no options are selected, but the error doesn't stop the program from working (you can select a character for generating a password, and it'll work fine) so error in the console it is for now
 btnGenerate.addEventListener('click', () => {
@@ -132,4 +151,8 @@ btnGenerate.addEventListener('click', () => {
 // handle showing values in the output field
 sliderLength.addEventListener('input', () => {
     sliderValue.value = sliderLength.value
+})
+
+copy.addEventListener('click', () => {
+    copyToClipboard()
 })
